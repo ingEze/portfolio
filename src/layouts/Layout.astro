@@ -1,0 +1,26 @@
+---
+import '../styles/global.css'
+import FogEffect from '../components/FogEffect.astro'
+import Language from '../components/Language.astro'
+
+interface Props {
+    title: string
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Backend Developer">
+    <title>{title}</title>
+</head>
+<body>
+    <Language />
+    <FogEffect />
+    <slot />
+</body>
+</html>

@@ -1,0 +1,172 @@
+---
+import { translations } from '../i18n/translations'
+
+const projectsData = [
+    {
+        github: 'https://github.com/ingeze/ecommerce-api',
+        iconGithub: `<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="#EEE"/></svg>`,
+        site: 'https://ecommerce-api-nmfr.onrender.com/api-docs',
+        iconSite: `<svg fill="#83d3fb" width="30px" height="30px" viewBox="-35.84 -35.84 583.68 583.68" id="_x30_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#83d3fb" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="4.096"></g><g id="SVGRepo_iconCarrier"><path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M418.275,146h-46.667 c-5.365-22.513-12.324-43.213-20.587-61.514c15.786,8.776,30.449,19.797,43.572,32.921C403.463,126.277,411.367,135.854,418.275,146 z M452,256c0,17.108-2.191,33.877-6.414,50h-64.034c1.601-16.172,2.448-32.887,2.448-50s-0.847-33.828-2.448-50h64.034 C449.809,222.123,452,238.892,452,256z M256,452c-5.2,0-21.048-10.221-36.844-41.813c-6.543-13.087-12.158-27.994-16.752-44.187 h107.191c-4.594,16.192-10.208,31.1-16.752,44.187C277.048,441.779,261.2,452,256,452z M190.813,306 c-1.847-16.247-2.813-33.029-2.813-50s0.966-33.753,2.813-50h130.374c1.847,16.247,2.813,33.029,2.813,50s-0.966,33.753-2.813,50 H190.813z M60,256c0-17.108,2.191-33.877,6.414-50h64.034c-1.601,16.172-2.448,32.887-2.448,50s0.847,33.828,2.448,50H66.414 C62.191,289.877,60,273.108,60,256z M256,60c5.2,0,21.048,10.221,36.844,41.813c6.543,13.087,12.158,27.994,16.752,44.187H202.404 c4.594-16.192,10.208-31.1,16.752-44.187C234.952,70.221,250.8,60,256,60z M160.979,84.486c-8.264,18.301-15.222,39-20.587,61.514 H93.725c6.909-10.146,14.812-19.723,23.682-28.593C130.531,104.283,145.193,93.262,160.979,84.486z M93.725,366h46.667 c5.365,22.513,12.324,43.213,20.587,61.514c-15.786-8.776-30.449-19.797-43.572-32.921C108.537,385.723,100.633,376.146,93.725,366z M351.021,427.514c8.264-18.301,15.222-39,20.587-61.514h46.667c-6.909,10.146-14.812,19.723-23.682,28.593 C381.469,407.717,366.807,418.738,351.021,427.514z"></path></g></svg>`,
+        npm: null,
+        iconNpm: null
+    },
+    {
+        github: 'https://github.com/ingeze/api-error',
+        iconGithub: `<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="#EEE"/></svg>`,
+        npm: 'https://www.npmjs.com/package/@ingeze/api-error',
+        iconNpm: `<svg xmlns="http://www.w3.org/2000/svg" width="40px" height="15px" viewBox="0 0 256 100" preserveAspectRatio="xMinYMin meet"><path d="M0 0v85.498h71.166V99.83H128V85.498h128V0H0z" fill="#CB3837"/><path d="M42.502 14.332h-28.17v56.834h28.17V28.664h14.332v42.502h14.332V14.332H42.502zM85.498 14.332v71.166h28.664V71.166h28.17V14.332H85.498zM128 56.834h-13.838v-28.17H128v28.17zM184.834 14.332h-28.17v56.834h28.17V28.664h14.332v42.502h14.332V28.664h14.332v42.502h14.332V14.332h-57.328z" fill="#EEE"/></svg>`,
+        site: null,
+        iconSite: null
+    },
+    {
+        github: 'https://github.com/ingeze/txtspy',
+        iconGithub: `<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="#EEE"/></svg>`,
+        npm: 'https://www.npmjs.com/package/@ingeze/txtspy',
+        iconNpm: `<svg xmlns="http://www.w3.org/2000/svg" width="40px" height="15px" viewBox="0 0 256 100" preserveAspectRatio="xMinYMin meet"><path d="M0 0v85.498h71.166V99.83H128V85.498h128V0H0z" fill="#CB3837"/><path d="M42.502 14.332h-28.17v56.834h28.17V28.664h14.332v42.502h14.332V14.332H42.502zM85.498 14.332v71.166h28.664V71.166h28.17V14.332H85.498zM128 56.834h-13.838v-28.17H128v28.17zM184.834 14.332h-28.17v56.834h28.17V28.664h14.332v42.502h14.332V28.664h14.332v42.502h14.332V14.332h-57.328z" fill="#EEE"/></svg>`,
+        site: null,
+        iconSite: null
+    },
+    {
+        github: 'https://github.com/ingeze/ecommerce-api-page',
+        iconGithub: `<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="#EEE"/></svg>`,
+        site: 'https://ecommerce-api-page.vercel.app/',
+        iconSite: `<svg fill="#83d3fb" width="30px" height="30px" viewBox="-35.84 -35.84 583.68 583.68" id="_x30_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#83d3fb" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="4.096"></g><g id="SVGRepo_iconCarrier"><path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M418.275,146h-46.667 c-5.365-22.513-12.324-43.213-20.587-61.514c15.786,8.776,30.449,19.797,43.572,32.921C403.463,126.277,411.367,135.854,418.275,146 z M452,256c0,17.108-2.191,33.877-6.414,50h-64.034c1.601-16.172,2.448-32.887,2.448-50s-0.847-33.828-2.448-50h64.034 C449.809,222.123,452,238.892,452,256z M256,452c-5.2,0-21.048-10.221-36.844-41.813c-6.543-13.087-12.158-27.994-16.752-44.187 h107.191c-4.594,16.192-10.208,31.1-16.752,44.187C277.048,441.779,261.2,452,256,452z M190.813,306 c-1.847-16.247-2.813-33.029-2.813-50s0.966-33.753,2.813-50h130.374c1.847,16.247,2.813,33.029,2.813,50s-0.966,33.753-2.813,50 H190.813z M60,256c0-17.108,2.191-33.877,6.414-50h64.034c-1.601,16.172-2.448,32.887-2.448,50s0.847,33.828,2.448,50H66.414 C62.191,289.877,60,273.108,60,256z M256,60c5.2,0,21.048,10.221,36.844,41.813c6.543,13.087,12.158,27.994,16.752,44.187H202.404 c4.594-16.192,10.208-31.1,16.752-44.187C234.952,70.221,250.8,60,256,60z M160.979,84.486c-8.264,18.301-15.222,39-20.587,61.514 H93.725c6.909-10.146,14.812-19.723,23.682-28.593C130.531,104.283,145.193,93.262,160.979,84.486z M93.725,366h46.667 c5.365,22.513,12.324,43.213,20.587,61.514c-15.786-8.776-30.449-19.797-43.572-32.921C108.537,385.723,100.633,376.146,93.725,366z M351.021,427.514c8.264-18.301,15.222-39,20.587-61.514h46.667c-6.909,10.146-14.812,19.723-23.682,28.593 C381.469,407.717,366.807,418.738,351.021,427.514z"></path></g></svg>`,
+        npm: null,
+        iconNpm: null
+    }
+]
+---
+
+<section class="section" id="projects">
+    <h2 class="section-title" data-i18n="projects.title">{translations.es.projects.title}</h2>
+    <div class="projects-grid">
+        {projectsData.map((project, index) => (
+            <div class="project-card">
+                <div class="h-card">
+                    <h3 class="project-title" data-i18n={`projects.list.${index}.title`}>
+                        {translations.es.projects.list[index].title}
+                    </h3>
+                    <div class="project-links">
+                        {project.npm && <a href={project.npm} target="_blank"><span class="link-icon" set:html={project.iconNpm}></span></a>}
+                        {project.site && <a href={project.site} target="_blank"><span class="link-icon" set:html={project.iconSite}></span></a>}
+                        {project.github && <a href={project.github} target="_blank"><span class="link-icon" set:html={project.iconGithub}></span></a>}
+                    </div>
+                </div>
+
+                <p class="project-tech" data-i18n={`projects.list.${index}.tech`}>
+                    [{translations.es.projects.list[index].tech}]
+                </p>
+                <p data-i18n={`projects.list.${index}.description`}>
+                    {translations.es.projects.list[index].description}
+                </p>
+            </div>
+        ))}
+    </div>
+</section>
+
+<style>
+    .projects-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .project-card {
+        padding: 2rem;
+        background: rgba(10, 10, 10, 0.8);
+        border-left: 3px solid var(--accent);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .h-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .project-links {
+        display: flex;      
+        justify-content: center;
+        align-items: center;
+        gap: .7rem;
+    }   
+
+    .project-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: .1s;
+    }
+
+    .project-links a:hover {
+        transform: scale(1.1);
+    }
+
+    .project-links .link-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-links .link-icon svg {
+        width: 30px;
+        height: 30px;
+        display: block; 
+    }
+
+    .project-card:hover {
+        transform: translateX(10px);
+        background: rgba(20, 20, 20, 0.9);
+        box-shadow: -5px 0 20px rgba(0, 255, 136, 0.2);
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin-bottom: .5rem;
+    }
+
+    .project-tech {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script>
+    import { translations, type Language } from '../i18n/translations'
+
+    function updateTranslations(lang: Language) {
+        const elements = document.querySelectorAll('[data-i18n]')
+        
+        elements.forEach((element) => {
+            const key = element.getAttribute('data-i18n')
+            if (!key) return
+
+            const keys = key.split('.')
+            let value: any = translations[lang]
+
+            for (const k of keys) {
+                value = value?.[k]
+            }
+
+            if (value && typeof value === 'string') {
+                if (key.includes('.tech')) {
+                    element.textContent = `[${value}]`
+                } else {
+                    element.textContent = value
+                }
+            }
+        })
+    }
+
+    window.addEventListener('languageChange', (e: Event) => {
+        const customEvent = e as CustomEvent<{ lang: Language }>
+        updateTranslations(customEvent.detail.lang)
+    })
+
+    const currentLang = (localStorage.getItem('language') || 'es') as Language
+    updateTranslations(currentLang)
+</script>

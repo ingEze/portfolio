@@ -1,0 +1,294 @@
+---
+import { translations } from '../i18n/translations'
+---
+
+<header>
+    <div class="header-content">
+        <div class="header-info">
+            <h1 class="glitch" data-i18n="header.name">{translations.es.header.name}</h1>
+            <p class="subtitle" data-i18n="header.subtitle">{translations.es.header.subtitle}</p>
+            <p class="terminal-line" data-i18n="header.status">{translations.es.header.status}</p>
+        </div>
+
+        <nav class="nav">
+            <ul class="nav-ul">
+                <li class="nav-li"><a href="#about" data-i18n="header.nav.about">{translations.es.header.nav.about}</a></li>
+                <li class="nav-li"><a href="#projects" data-i18n="header.nav.projects">{translations.es.header.nav.projects}</a></li>
+                <li class="nav-li"><a href="#stack" data-i18n="header.nav.stack">{translations.es.header.nav.stack}</a></li>
+                <li class="nav-li"><a href="#contact" data-i18n="header.nav.contact">{translations.es.header.nav.contact}</a></li>
+            </ul>
+        </nav>
+
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+        </button>
+    </div>
+</header>
+
+<style>
+    header {
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+        position: sticky;
+        top: 0;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+    }
+
+    :global(section[id]) {
+        scroll-margin-top: 140px;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .header-info {
+        flex: 1;
+    }
+
+    .glitch {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--accent);
+        text-shadow: 
+            0 0 10px var(--accent),
+            2px 2px 0 rgba(255, 0, 100, 0.3),
+            -2px -2px 0 rgba(0, 255, 200, 0.3);
+        animation: glitchText 3s infinite;
+        margin-bottom: 0.3rem;
+    }
+
+    @keyframes glitchText {
+        0%, 90%, 100% { transform: translateX(0); }
+        92% { transform: translateX(-2px); }
+        94% { transform: translateX(2px); }
+    }
+
+    .subtitle {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin-top: 0.3rem;
+    }
+
+    .terminal-line {
+        color: var(--accent-dim);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+
+    .terminal-line::before {
+        content: '$ ';
+        color: var(--accent);
+        animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0.4; }
+    }
+
+    .nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav-ul {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        list-style: none;
+    }
+
+    .nav-li > a {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 0.5rem 0;
+    }
+
+    .nav-li > a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: width 0.3s ease;
+    }
+
+    .nav-li > a:hover {
+        color: var(--accent);
+    }
+
+    .nav-li > a:hover::before {
+        width: 100%;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 101;
+    }
+
+    .hamburger {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--accent);
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background: var(--accent);
+        transition: all 0.3s ease;
+    }
+
+    .hamburger::before {
+        top: -8px;
+    }
+
+    .hamburger::after {
+        bottom: -8px;
+    }
+
+    @media (max-width: 768px) {
+        .header-content {
+            padding: 0 1.5rem;
+        }
+
+        .glitch {
+            font-size: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+        }
+
+        .terminal-line {
+            font-size: 0.75rem;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100vh;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(10px);
+            border-left: 1px solid rgba(0, 255, 136, 0.2);
+            transition: right 0.3s ease;
+            padding: 5rem 2rem 2rem;
+            justify-content: flex-start;
+        }
+
+        .nav.active {
+            right: 0;
+        }
+
+        .nav-ul {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .nav-li {
+            width: 100%;
+        }
+
+        .nav-li > a {
+            font-size: 1.2rem;
+            display: block;
+            padding: 0.8rem 0;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+        }
+
+        .mobile-menu-btn.active .hamburger {
+            background: transparent;
+        }
+
+        .mobile-menu-btn.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .mobile-menu-btn.active .hamburger::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+    }
+</style>
+
+<script>
+    import { translations, type Language } from '../i18n/translations'
+
+    const menuBtn = document.querySelector('.mobile-menu-btn')
+    const nav = document.querySelector('.nav')
+
+    if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active')
+            nav.classList.toggle('active')
+        });
+
+        const navLinks = document.querySelectorAll('.nav-li > a')
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active')
+                nav.classList.remove('active')
+            })
+        })
+    }
+
+    function updateTranslations(lang: Language) {
+        const elements = document.querySelectorAll('[data-i18n]')
+        
+        elements.forEach((element) => {
+            const key = element.getAttribute('data-i18n')
+            if (!key) return
+
+            const keys = key.split('.')
+            let value: any = translations[lang]
+
+            for (const k of keys) {
+                value = value?.[k]
+            }
+
+            if (value && typeof value === 'string') {
+                element.textContent = value
+            }
+        });
+    }
+
+    window.addEventListener('languageChange', (e: Event) => {
+        const customEvent = e as CustomEvent<{ lang: Language }>
+        updateTranslations(customEvent.detail.lang)
+    })
+
+    const currentLang = (localStorage.getItem('language') || 'es') as Language
+    updateTranslations(currentLang)
+</script>
