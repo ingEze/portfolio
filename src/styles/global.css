@@ -57,3 +57,36 @@ body {
     content: '// ';
     color: var(--text-secondary);
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .section {
+        margin: 2rem 0;
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.75rem;
+    }
+
+    .section {
+        margin: 1.5rem 0;
+        padding: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+}

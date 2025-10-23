@@ -38,15 +38,21 @@ const links = [
 </section>
 
 <style>
+    .contact-desc {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
     .contact-links {
-        display: flex;
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
         margin-top: 1.5rem;
-        flex-wrap: wrap;
     }
 
     .contact-link {
         display: flex;
+        align-items: center;
         color: var(--accent);
         text-decoration: none;
         padding: 0.8rem 1.5rem;
@@ -57,16 +63,60 @@ const links = [
 
     .contact-link .icon {
         display: flex;
-        vertical-align: middle;
+        align-items: center;
         margin-right: 8px;
+        flex-shrink: 0;
+    }
+
+    .contact-link p {
+        margin: 0;
+        white-space: nowrap;
     }
 
     .contact-link:hover {
         background: var(--accent);
         color: var(--bg-dark);
         box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .contact-desc {
+            font-size: 1rem;
+        }
+
+        .contact-links {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-link {
+            padding: 0.7rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-link .icon {
+            margin-right: 6px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact-desc {
+            font-size: 0.95rem;
+        }
+
+        .contact-links {
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
+        }
+
+        .contact-link {
+            padding: 0.8rem 1rem;
+            justify-content: flex-start;
+        }
     }
 </style>
+
 
 <script>
     import { translations, type Language } from '../i18n/translations'

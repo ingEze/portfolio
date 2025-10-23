@@ -56,4 +56,40 @@
         0%, 100% { opacity: 0.3; }
         50% { opacity: 0.6; }
     }
+
+    @media (max-width: 768px) {
+        .fog-overlay {
+            animation: fogMove 15s ease-in-out infinite;
+        }
+
+        @keyframes fogMove {
+            0%, 100% { opacity: 0.25; transform: translateX(0) translateY(0); }
+            50% { opacity: 0.4; transform: translateX(15px) translateY(-15px); }
+        }
+
+        .light {
+            width: 150px;
+            height: 150px;
+        }
+
+        .light:nth-child(1) { top: 5%; left: 5%; }
+        .light:nth-child(2) { top: 50%; right: 5%; }
+        .light:nth-child(3) { bottom: 10%; left: 20%; }
+    }
+
+    @media (max-width: 480px) {
+        .fog-overlay {
+            opacity: 0.8;
+        }
+
+        .light {
+            width: 100px;
+            height: 100px;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.4; }
+        }
+    }
 </style>

@@ -15,12 +15,44 @@ import { translations } from '../i18n/translations'
 <style>
     .desc {
         font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 0;
     }
 
     .quote {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         color: var(--text-secondary);
         font-style: italic;
+        font-size: 1.1rem;
+        padding-left: 1rem;
+        border-left: 3px solid var(--accent);
+    }
+
+    @media (max-width: 768px) {
+        .desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .quote {
+            font-size: 0.95rem;
+            margin-top: 1.2rem;
+            padding-left: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .quote {
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            padding-left: 0.6rem;
+            border-left-width: 2px;
+        }
     }
 </style>
 

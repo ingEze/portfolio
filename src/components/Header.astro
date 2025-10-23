@@ -171,7 +171,25 @@ import { translations } from '../i18n/translations'
         bottom: -8px;
     }
 
+    @media (max-width: 968px) {
+        .nav-ul {
+            gap: 1.5rem;
+        }
+
+        .nav-li > a {
+            font-size: 0.95rem;
+        }
+    }
+
     @media (max-width: 768px) {
+        header {
+            padding: 1.5rem 0;
+        }
+
+        :global(section[id]) {
+            scroll-margin-top: 120px;
+        }
+
         .header-content {
             padding: 0 1.5rem;
         }
@@ -193,6 +211,7 @@ import { translations } from '../i18n/translations'
             top: 0;
             right: -100%;
             width: 70%;
+            max-width: 300px;
             height: 100vh;
             background: rgba(10, 10, 10, 0.98);
             backdrop-filter: blur(10px);
@@ -239,6 +258,40 @@ import { translations } from '../i18n/translations'
         .mobile-menu-btn.active .hamburger::after {
             transform: rotate(-45deg);
             bottom: 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header {
+            padding: 1rem 0;
+        }
+
+        :global(section[id]) {
+            scroll-margin-top: 100px;
+        }
+
+        .header-content {
+            padding: 0 1rem;
+        }
+
+        .glitch {
+            font-size: 1.3rem;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+        }
+
+        .terminal-line {
+            font-size: 0.7rem;
+        }
+
+        .nav {
+            width: 80%;
+        }
+
+        .nav-li > a {
+            font-size: 1.1rem;
         }
     }
 </style>
