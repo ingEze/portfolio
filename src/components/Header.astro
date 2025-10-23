@@ -213,16 +213,37 @@ import { translations } from '../i18n/translations'
             width: 70%;
             max-width: 300px;
             height: 100vh;
+            height: 100dvh;
             background: rgba(10, 10, 10, 0.98);
             backdrop-filter: blur(10px);
             border-left: 1px solid rgba(0, 255, 136, 0.2);
             transition: right 0.3s ease;
             padding: 5rem 2rem 2rem;
             justify-content: flex-start;
+            z-index: 1000;
+            overflow-y: auto;
         }
 
         .nav.active {
             right: 0;
+        }
+
+        .nav.active::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .nav-ul {
@@ -244,6 +265,8 @@ import { translations } from '../i18n/translations'
 
         .mobile-menu-btn {
             display: block;
+            position: relative;
+            z-index: 1001;
         }
 
         .mobile-menu-btn.active .hamburger {
@@ -288,6 +311,7 @@ import { translations } from '../i18n/translations'
 
         .nav {
             width: 80%;
+            padding: 4rem 1.5rem 2rem;
         }
 
         .nav-li > a {
@@ -299,21 +323,67 @@ import { translations } from '../i18n/translations'
 <script>
     import { translations, type Language } from '../i18n/translations'
 
-    const menuBtn = document.querySelector('.mobile-menu-btn')
-    const nav = document.querySelector('.nav')
+    const menuBtn = document.querySelector('.mobile-menu-btn') as HTMLButtonElement
+    const nav = document.querySelector('.nav') as HTMLElement
+    const body = document.body
+
+    function closeMenu() {
+        if (menuBtn && nav) {
+            menuBtn.classList.remove('active')
+            nav.classList.remove('active')
+            body.classList.remove('menu-open')
+        }
+    }
+
+    function openMenu() {
+        if (menuBtn && nav) {
+            menuBtn.classList.add('active')
+            nav.classList.add('active')
+            body.classList.add('menu-open')
+        }
+    }
 
     if (menuBtn && nav) {
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active')
-            nav.classList.toggle('active')
-        });
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation()
+            const isActive = nav.classList.contains('active')
+            if (isActive) {
+                closeMenu()
+            } else {
+                openMenu()
+            }
+        })
 
         const navLinks = document.querySelectorAll('.nav-li > a')
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                menuBtn.classList.remove('active')
-                nav.classList.remove('active')
+                closeMenu()
             })
+        })
+
+        document.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement
+            if (nav.classList.contains('active') && 
+                !nav.contains(target) && 
+                !menuBtn.contains(target)) {
+                closeMenu()
+            }
+        })
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                closeMenu()
+            }
+        })
+
+        let resizeTimer: any
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer)
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                    closeMenu()
+                }
+            }, 250)
         })
     }
 
