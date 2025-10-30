@@ -8,6 +8,16 @@ import { translations } from '../i18n/translations'
             <h1 class="glitch" data-i18n="header.name">{translations.es.header.name}</h1>
             <p class="subtitle" data-i18n="header.subtitle">{translations.es.header.subtitle}</p>
             <p class="terminal-line" data-i18n="header.status">{translations.es.header.status}</p>
+            <a 
+                href={translations.es.header.CV.link} 
+                download={translations.es.header.CV.downloadNameFile} 
+                class="download-btn" 
+                data-i18n="header.CV.title"
+                data-i18n-href="header.CV.link"
+                data-i18n-download="header.CV.downloadNameFile"
+            >
+                {translations.es.header.CV.title}
+            </a>
         </div>
 
         <nav class="nav">
@@ -53,6 +63,38 @@ import { translations } from '../i18n/translations'
         flex: 1;
     }
 
+    .download-btn {
+    --bg-dark: #0b0b0b;
+
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.25rem;
+    gap: 0.4rem;
+    background: var(--bg-dark);
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    border-radius: 8px;
+    padding: 0.6rem .85rem;
+    font-family: "Fira Code", monospace;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 6px var(--accent-dim);
+    transition: all 0.25s ease-in-out;
+  }
+
+  .download-btn:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 16px var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 0 8px var(--accent-dim);
+  }
     .glitch {
         font-size: 2rem;
         font-weight: bold;
@@ -403,6 +445,31 @@ import { translations } from '../i18n/translations'
 
             if (value && typeof value === 'string') {
                 element.textContent = value
+            }
+
+            // Actualizar atributos especiales (href y download para el CV)
+            const hrefKey = element.getAttribute('data-i18n-href')
+            if (hrefKey) {
+                const hrefKeys = hrefKey.split('.')
+                let hrefValue: any = translations[lang]
+                for (const k of hrefKeys) {
+                    hrefValue = hrefValue?.[k]
+                }
+                if (hrefValue && typeof hrefValue === 'string') {
+                    element.setAttribute('href', hrefValue)
+                }
+            }
+
+            const downloadKey = element.getAttribute('data-i18n-download')
+            if (downloadKey) {
+                const downloadKeys = downloadKey.split('.')
+                let downloadValue: any = translations[lang]
+                for (const k of downloadKeys) {
+                    downloadValue = downloadValue?.[k]
+                }
+                if (downloadValue && typeof downloadValue === 'string') {
+                    element.setAttribute('download', downloadValue)
+                }
             }
         });
     }

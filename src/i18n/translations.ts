@@ -9,6 +9,11 @@ export const translations = {
         projects: 'Proyectos',
         stack: 'Stack',
         contact: 'Contáctame'
+      },
+      CV: {
+        title: '📄 Descargar CV',
+        link: '/Ezequiel_Saucedo.pdf',
+        downloadNameFile: 'Ezequiel_Saucedo_CV_ES.pdf'
       }
     },
     about: {
@@ -54,7 +59,7 @@ export const translations = {
     },
     contact: {
       title: 'Contacto',
-      description: '¿Necesitas construir algo sólido? Hablemos.'
+      description: '¿Necesitas construir algo? Hablemos.'
     }
   },
 
@@ -68,6 +73,11 @@ export const translations = {
         projects: 'Projects',
         stack: 'Stack',
         contact: 'Contact'
+      },
+      CV: {
+        title: '📄 Download CV',
+        link: '/Ezequiel_Saucedo_EN.pdf',
+        downloadNameFile: 'Ezequiel_Saucedo_CV_EN.pdf'
       }
     },
     about: {
@@ -113,7 +123,7 @@ export const translations = {
     },
     contact: {
       title: 'Contact',
-      description: 'Need to build something solid? Let\'s talk.'
+      description: 'Need to build something? Let\'s talk.'
     }
   }
 } as const
