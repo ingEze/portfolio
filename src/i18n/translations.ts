@@ -43,6 +43,11 @@ export const translations = {
           title: 'Landing page sobre Ecommerce API',
           tech: 'Astro | CSS | HTML | TypeScript',
           description: 'Sitio web informativo sobre la Ecommerce API, con descripción, ejemplos de uso y enlaces útiles para desarrolladores.'
+        },
+        {
+          title: 'CryptoBot - Asistente de Criptomonedas',
+          tech: 'Node.js | TypeScript | Redis | Astro | WebSocket | CoinGecko API | CSS Moderno',
+          description: 'Un asistente inteligente de criptomonedas que te ayuda a consultar precios, tokens y datos de mercado en tiempo real.'
         }
       ]
     },
@@ -107,6 +112,11 @@ export const translations = {
           title: 'Landing page about Ecommerce API',
           tech: 'Astro | CSS | HTML | TypeScript',
           description: 'Informative website about the Ecommerce API, with description, usage examples, and useful links for developers.'
+        },
+        {
+          title: 'CryptoBot - Cryptocurrency Assistant',
+          tech: 'Node.js | TypeScript | Redis | Astro | WebSocket | CoinGecko API | Modern CSS',
+          description: 'An intelligent cryptocurrency assistant that helps you check prices, tokens, and market data in real time.'
         }
       ]
     },
