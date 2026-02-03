@@ -48,6 +48,11 @@ export const translations = {
           title: 'CryptoBot - Asistente de Criptomonedas',
           tech: 'Node.js | TypeScript | Redis | Astro | WebSocket | CoinGecko API | CSS Moderno',
           description: 'Un asistente inteligente de criptomonedas que te ayuda a consultar precios, tokens y datos de mercado en tiempo real.'
+        },
+        {
+          title: 'QuickPhoneFix',
+          tech: 'TypeScript | Astro | React | Tailwind CSS | Resend',
+          description: 'Sitio web moderno y responsive para QuickPhoneFix, un local de reparación de celulares, enfocado en performance, accesibilidad y experiencia de usuario.'
         }
       ]
     },
@@ -117,6 +122,11 @@ export const translations = {
           title: 'CryptoBot - Cryptocurrency Assistant',
           tech: 'Node.js | TypeScript | Redis | Astro | WebSocket | CoinGecko API | Modern CSS',
           description: 'An intelligent cryptocurrency assistant that helps you check prices, tokens, and market data in real time.'
+        },
+        {
+          title: 'QuickPhoneFix',
+          tech: 'TypeScript | Astro | React | Tailwind CSS | Resend',
+          description: 'Modern and responsive website for QuickPhoneFix, a cellphone repair shop, focused on performance, accessibility, and user experience.'
         }
       ]
     },
