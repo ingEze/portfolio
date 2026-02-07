@@ -50,10 +50,11 @@ export const translations = {
           description: 'Un asistente inteligente de criptomonedas que te ayuda a consultar precios, tokens y datos de mercado en tiempo real.'
         },
         {
-          title: 'QuickPhoneFix',
-          tech: 'TypeScript | Astro | React | Tailwind CSS | Resend',
-          description: 'Sitio web moderno y responsive para QuickPhoneFix, un local de reparación de celulares, enfocado en performance, accesibilidad y experiencia de usuario.'
+          title: 'Landing Page Reparación de Celulares',
+          tech: 'TypeScript | Astro | React | Tailwind CSS',
+          description: 'Landing page creada originalmente para un cliente real y adaptada como versión demo para el portfolio. Diseño moderno y responsive enfocado en performance, accesibilidad y experiencia de usuario.'
         }
+
       ]
     },
     skills: {
@@ -124,10 +125,11 @@ export const translations = {
           description: 'An intelligent cryptocurrency assistant that helps you check prices, tokens, and market data in real time.'
         },
         {
-          title: 'QuickPhoneFix',
-          tech: 'TypeScript | Astro | React | Tailwind CSS | Resend',
-          description: 'Modern and responsive website for QuickPhoneFix, a cellphone repair shop, focused on performance, accessibility, and user experience.'
+          title: 'Phone Repair Landing Page',
+          tech: 'TypeScript | Astro | React | Tailwind CSS',
+          description: 'Landing page originally built for a real client and adapted into a demo version for portfolio purposes. Modern and responsive design focused on performance, accessibility, and user experience.'
         }
+
       ]
     },
     skills: {
